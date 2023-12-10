@@ -11,6 +11,14 @@
 				);
 
 			new Machine(expression).Run();
+
+			IExpression expression2 =
+				new LessThan(
+					new Number(5),
+					new Add(new Number(2), new Number(2))
+				);
+
+			new Machine(expression2).Run();
 		}
 	}
 }
