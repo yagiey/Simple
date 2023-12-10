@@ -10,20 +10,7 @@
 					new Multiply(new Number(3), new Number(4))
 				);
 
-			Console.WriteLine(expression);
-			Console.WriteLine(expression.IsReducible());
-			expression = expression.Reduce();
-
-			Console.WriteLine(expression);
-			Console.WriteLine(expression.IsReducible());
-			expression = expression.Reduce();
-
-			Console.WriteLine(expression);
-			Console.WriteLine(expression.IsReducible());
-			expression = expression.Reduce();
-
-			Console.WriteLine(expression);
-			Console.WriteLine(expression.IsReducible());
+			new Machine(expression).Run();
 		}
 	}
 }
