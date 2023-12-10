@@ -1,4 +1,6 @@
-﻿namespace Simple
+﻿using System;
+
+namespace Simple
 {
 	public class Machine
 	{
@@ -8,14 +10,22 @@
             set;
         }
 
-        public Machine(IExpression expression)
+		public Environment Environment
+		{
+			get;
+			set;
+		}
+
+		public Machine(IExpression expression, Environment environment)
         {
             Expression = expression;
-        }
+			Environment = environment;
+
+		}
 
         public void Step()
         {
-			Expression = Expression.Reduce();
+			Expression = Expression.Reduce(Environment);
 		}
 
 		public void Run()

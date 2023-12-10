@@ -1,6 +1,6 @@
 ﻿namespace Simple
 {
-	internal class LessThan : IExpression
+	public class LessThan : IExpression
 	{
 		public IExpression Left
 		{
@@ -22,15 +22,15 @@
 
 		public bool IsReducible() { return true; }
 
-		public IExpression Reduce()
+		public IExpression Reduce(Environment environment)
 		{
 			if (Left.IsReducible())
 			{
-				return new LessThan(Left.Reduce(), Right);
+				return new LessThan(Left.Reduce(environment), Right);
 			}
 			else if (Right.IsReducible())
 			{
-				return new LessThan(Left, Right.Reduce());
+				return new LessThan(Left, Right.Reduce(environment));
 			}
 			else
 			{

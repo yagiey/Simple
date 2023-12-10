@@ -15,7 +15,7 @@
 
 		public bool IsReducible() { return false; }
 
-		public IExpression Reduce() { return this; }
+		public IExpression Reduce(Environment environment) { return this; }
 
 		public override string ToString()
 		{

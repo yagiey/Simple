@@ -3,7 +3,9 @@
 	public interface IExpression
 	{
 		bool IsReducible();
-		IExpression Reduce();
+
+		IExpression Reduce(Environment environment);
+
 		string Inspect();
 	}
 }

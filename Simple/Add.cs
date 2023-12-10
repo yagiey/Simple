@@ -22,15 +22,15 @@
 
 		public bool IsReducible() { return true; }
 
-		public IExpression Reduce()
+		public IExpression Reduce(Environment environment)
 		{
 			if (Left.IsReducible())
 			{
-				return new Add(Left.Reduce(), Right);
+				return new Add(Left.Reduce(environment), Right);
 			}
 			else if (Right.IsReducible())
 			{
-				return new Add(Left, Right.Reduce());
+				return new Add(Left, Right.Reduce(environment));
 			}
 			else
 			{
