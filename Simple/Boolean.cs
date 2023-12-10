@@ -19,12 +19,7 @@
 
 		public override string ToString()
 		{
-			return Value.ToString();
-		}
-
-		public string Inspect()
-		{
-			return $"≪{this}≫";
+			return $"≪{Value}≫";
 		}
 	}
 }

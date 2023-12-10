@@ -28,12 +28,7 @@ namespace Simple
 
 		public override string ToString()
 		{
-			return Name.ToString();
-		}
-
-		public string Inspect()
-		{
-			return $"≪{this}≫";
+			return $"≪{Name}≫";
 		}
 	}
 }

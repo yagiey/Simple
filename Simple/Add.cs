@@ -40,12 +40,7 @@
 
 		public override string ToString()
 		{
-			return $"{Left} + {Right}";
-		}
-
-		public string Inspect()
-		{
-			return $"≪{this}≫";
+			return $"≪{Left} + {Right}≫";
 		}
 	}
 }
