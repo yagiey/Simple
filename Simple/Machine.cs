@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace Simple
+﻿namespace Simple
 {
 	public class Machine
 	{
-        public IExpression Expression
-        {
-            get;
-            set;
-        }
+		public IStatement Statement
+		{
+			get;
+			set;
+		}
 
 		public Environment Environment
 		{
@@ -16,26 +14,27 @@ namespace Simple
 			set;
 		}
 
-		public Machine(IExpression expression, Environment environment)
-        {
-            Expression = expression;
+		public Machine(IStatement statement, Environment environment)
+		{
+			Statement = statement;
 			Environment = environment;
-
 		}
 
-        public void Step()
-        {
-			Expression = Expression.Reduce(Environment);
+		public void Step()
+		{
+			var tuple = Statement.Reduce(Environment);
+			Statement = tuple.Item1;
+			Environment = tuple.Item2!;
 		}
 
 		public void Run()
-        {
-            while (Expression.IsReducible())
-            {
-                Console.WriteLine(Expression);
-                Step();
-            }
-			Console.WriteLine(Expression);
+		{
+			while (Statement.IsReducible())
+			{
+				Console.WriteLine(Statement);
+				Step();
+			}
+			Console.WriteLine(Statement);
 		}
 	}
 }

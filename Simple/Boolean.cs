@@ -2,24 +2,32 @@
 {
 	public class Boolean : IExpression
 	{
-        public bool Value
-        {
-            get;
-            set;
-        }
+		public object Value
+		{
+			get;
+			set;
+		}
 
-        public Boolean(bool value)
-        {
-            Value = value;
-        }
+		public Boolean(bool value)
+		{
+			Value = value;
+		}
 
 		public bool IsReducible() { return false; }
 
-		public IExpression Reduce(Environment environment) { return this; }
+		public IExpression Reduce(Environment environment)
+		{
+			return this;
+		}
 
 		public override string ToString()
 		{
-			return $"≪{Value}≫";
+			return $"{Value}";
+		}
+
+		public string Inspect()
+		{
+			return $"≪{this}≫";
 		}
 	}
 }

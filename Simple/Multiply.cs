@@ -26,21 +26,28 @@
 		{
 			if (Left.IsReducible())
 			{
-				return new Add(Left.Reduce(environment), Right);
+				return new Multiply(Left.Reduce(environment), Right);
 			}
 			else if (Right.IsReducible())
 			{
-				return new Add(Left, Right.Reduce(environment));
+				return new Multiply(Left, Right.Reduce(environment));
 			}
 			else
 			{
-				return new Number(((Number)Left).Value * ((Number)Right).Value);
+				Number left = (Number)Left;
+				Number right = (Number)Right;
+				return new Number((int)left.Value * (int)right.Value);
 			}
 		}
 
 		public override string ToString()
 		{
-			return $"≪{Left} * {Right}≫";
+			return $"{Left} * {Right}";
+		}
+
+		public string Inspect()
+		{
+			return $"≪{this}≫";
 		}
 	}
 }

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Simple
+﻿namespace Simple
 {
 	public class Variable : IExpression
 	{
-		public string Name
+		public object Value
 		{
 			get;
 			set;
@@ -16,19 +10,24 @@ namespace Simple
 
 		public Variable(string name)
 		{
-			Name = name;
+			Value = name;
 		}
 
 		public bool IsReducible() { return true; }
 
 		public IExpression Reduce(Environment environment)
 		{
-			return environment.Find(Name);
+			return environment.Find(Value.ToString()!);
 		}
 
 		public override string ToString()
 		{
-			return $"≪{Name}≫";
+			return $"{Value}";
+		}
+
+		public string Inspect()
+		{
+			return $"≪{this}≫";
 		}
 	}
 }

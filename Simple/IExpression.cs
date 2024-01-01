@@ -5,5 +5,7 @@
 		bool IsReducible();
 
 		IExpression Reduce(Environment environment);
+
+		string Inspect();
 	}
 }
