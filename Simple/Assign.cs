@@ -5,16 +5,16 @@ namespace Simple
 {
 	internal class Assign : IStatement
 	{
-		public string Name
+		private string Name
 		{
 			get;
-			private set;
+			set;
 		}
 
-		public IExpression Expression
+		private IExpression Expression
 		{
 			get;
-			private set;
+			set;
 		}
 
 		public Assign(string name, IExpression expression)

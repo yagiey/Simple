@@ -2,13 +2,13 @@
 {
 	public class Multiply : IExpression
 	{
-		public IExpression Left
+		private IExpression Left
 		{
 			get;
 			set;
 		}
 
-		public IExpression Right
+		private IExpression Right
 		{
 			get;
 			set;

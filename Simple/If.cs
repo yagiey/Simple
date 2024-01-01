@@ -4,22 +4,22 @@ namespace Simple
 {
 	internal class If : IStatement
 	{
-		public IExpression Condition
+		private IExpression Condition
 		{
 			get;
-			private set;
+			set;
 		}
 
-		public IStatement Consequence
+		private IStatement Consequence
 		{
 			get;
-			private set;
+			set;
 		}
 
-		public IStatement Alternative
+		private IStatement Alternative
 		{
 			get;
-			private set;
+			set;
 		}
 
 		public If(IExpression condition, IStatement consequence, IStatement alternative)

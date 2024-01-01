@@ -31,6 +31,24 @@ namespace Simple
 				new Environment(new Dictionary<string, IExpression> { { "x", new Boolean(false) } })
 			).Run();
 			Console.WriteLine("----------");
+
+			new Machine(
+				new Sequence(
+					new Assign("x", new Add(new Number(1), new Number(1))),
+					new Assign("y", new Add(new Variable("x"), new Number(3)))
+				),
+				new Environment(new Dictionary<string, IExpression> { { "x", new Boolean(false) } })
+			).Run();
+			Console.WriteLine("----------");
+
+			new Machine(
+				new While(
+					new LessThan(new Variable("x"), new Number(5)),
+					new Assign("x", new Multiply(new Variable("x"), new Number(3)))
+				),
+				new Environment(new Dictionary<string, IExpression> { { "x", new Number(1) } })
+			).Run();
+			Console.WriteLine("----------");
 		}
 	}
 }
