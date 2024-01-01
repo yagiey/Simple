@@ -1,4 +1,6 @@
-﻿namespace Simple
+﻿using System;
+
+namespace Simple
 {
 	public class Machine
 	{
@@ -31,10 +33,10 @@
 		{
 			while (Statement.IsReducible())
 			{
-				Console.WriteLine(Statement);
+				Console.WriteLine($"{Statement}, {Environment}");
 				Step();
 			}
-			Console.WriteLine(Statement);
+			Console.WriteLine($"{Statement}, {Environment}");
 		}
 	}
 }

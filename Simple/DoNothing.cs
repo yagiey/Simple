@@ -1,4 +1,6 @@
-﻿namespace Simple
+﻿using System;
+
+namespace Simple
 {
 	internal class DoNothing : IStatement, IEquatable<DoNothing>
 	{

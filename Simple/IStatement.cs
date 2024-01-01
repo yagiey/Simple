@@ -1,4 +1,6 @@
-﻿namespace Simple
+﻿using System;
+
+namespace Simple
 {
 	public interface IStatement
 	{

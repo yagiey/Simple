@@ -1,4 +1,7 @@
-﻿namespace Simple
+﻿using System;
+using System.Collections.Generic;
+
+namespace Simple
 {
 	internal class Assign : IStatement
 	{

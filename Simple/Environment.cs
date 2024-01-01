@@ -1,4 +1,7 @@
-﻿namespace Simple
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Simple
 {
 	public class Environment
 	{
