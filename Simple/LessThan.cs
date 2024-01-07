@@ -49,5 +49,12 @@
 		{
 			return $"≪{this}≫";
 		}
+
+		public IExpression Evaluate(Environment environment)
+		{
+			Number left = (Number)Left.Evaluate(environment);
+			Number right = (Number)Right.Evaluate(environment);
+			return new Boolean((int)left.Value < (int)right.Value);
+		}
 	}
 }

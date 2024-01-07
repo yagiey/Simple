@@ -54,5 +54,10 @@ namespace Simple
 					(Environment?)environment.Merge(new Dictionary<string, IExpression> { [Name] = Expression }));
 			}
 		}
+
+		public Environment Evaluate(Environment environment)
+		{
+			return environment.Merge(new Dictionary<string,IExpression>{ {Name, Expression.Evaluate(environment) } });
+		}
 	}
 }

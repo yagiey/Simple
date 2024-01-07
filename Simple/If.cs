@@ -76,5 +76,20 @@ namespace Simple
 				}
 			}
 		}
+
+		public Environment Evaluate(Environment environment)
+		{
+			IExpression resultCondition = Condition.Evaluate(environment);
+			Boolean obj = (Boolean)resultCondition;
+			bool b = (bool)obj.Value;
+			if (b)
+			{
+				return Consequence.Evaluate(environment);
+			}
+			else
+			{
+				return Alternative.Evaluate(environment);
+			}
+		}
 	}
 }

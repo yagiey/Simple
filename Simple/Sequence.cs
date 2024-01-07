@@ -57,5 +57,10 @@ namespace Simple
 					);
 			}
 		}
+
+		public Environment Evaluate(Environment environment)
+		{
+			return Second.Evaluate(First.Evaluate(environment));
+		}
 	}
 }

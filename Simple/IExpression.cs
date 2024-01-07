@@ -7,5 +7,7 @@
 		IExpression Reduce(Environment environment);
 
 		string Inspect();
+
+		IExpression Evaluate(Environment environment);
 	}
 }

@@ -29,5 +29,10 @@
 		{
 			return $"≪{this}≫";
 		}
+
+		public IExpression Evaluate(Environment environment)
+		{
+			return this;
+		}
 	}
 }

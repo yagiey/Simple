@@ -9,5 +9,7 @@ namespace Simple
 		Tuple<IStatement, Environment?> Reduce(Environment environment);
 
 		string Inspect();
+
+		Environment Evaluate(Environment environment);
 	}
 }

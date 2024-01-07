@@ -45,5 +45,19 @@ namespace Simple
 					(Environment?)environment
 				);
 		}
+
+		public Environment Evaluate(Environment environment)
+		{
+			Boolean resultCondition = (Boolean)Condition.Evaluate(environment);
+			bool b = (bool)resultCondition.Value;
+			if (b)
+			{
+				return Evaluate(Body.Evaluate(environment));
+			}
+			else
+			{
+				return environment;
+			}
+		}
 	}
 }

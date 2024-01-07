@@ -43,5 +43,9 @@ namespace Simple
 			return $"≪{this}≫";
 		}
 
+		public Environment Evaluate(Environment environment)
+		{
+			return environment;
+		}
 	}
 }
